@@ -64,23 +64,3 @@ class Converter:
         threshold2 = 200
 
         self.copyImg = cv2.Canny(img, threshold1, threshold2)
-'''
-import cv2
-
-class Converter:
-    def __init__(self, imgPath):
-        self.image = cv2.imread(imgPath)
-        self._convertImage(1360, 720) 
-
-    def _convertImage(self, width, height):
-        scaledImage = cv2.resize(self.image, (width, height))
-        grayImage = cv2.cvtColor(scaledImage, cv2.COLOR_BGR2GRAY)
-        self.image = grayImage 
-
-    def _removeImperfections(self):
-        
-    # Testing purposes only
-    def showImage(self):
-        cv2.imshow('Actual image status', self.image)
-        cv2.waitKey(0)
-'''
