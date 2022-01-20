@@ -3,6 +3,7 @@ from tkinter import filedialog
 import Example as ex
 import Result as r
 
+
 class GUI:
     #Methods
     def clickExample(self,window):

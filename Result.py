@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
+from PIL import Image, ImageTk
+
     
 import Example as ex
 
@@ -47,7 +49,8 @@ class Result:
 
         #mainLabel - Image display
         mainLabel=Label(window)
-        photo=PhotoImage(file=path)
+        image = Image.open(path)
+        photo = ImageTk.PhotoImage(image)
         mainLabel.config(image=photo,bg='#48c3dc')
             
         mainLabel.config(width=400,height=310,bg='#48c3dc')
