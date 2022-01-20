@@ -50,6 +50,7 @@ class Result:
         #mainLabel - Image display
         mainLabel=Label(window)
         image = Image.open(path)
+        image = image.resize((360, 240), Image.ANTIALIAS)
         photo = ImageTk.PhotoImage(image)
         mainLabel.config(image=photo,bg='#48c3dc')
             
