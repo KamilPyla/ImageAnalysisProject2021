@@ -19,9 +19,12 @@ class GUI:
             window.destroy()
             res=r.Result(window.filename)
 
-    def clickCheck(self):
-        #do uzupelnienia
-        return 1
+    def clickCheck(self,window):
+        var = StringVar()
+        ResultLabel=Label(window)
+        ResultLabel.place(x=160,y=400)
+        ResultLabel.config(textvariable=var,font=('Times',20),justify='left', anchor=N,pady=20,background="#ab0c0e")
+        var.set("Nie ma czego jeszcze czego sprawdzać")
 
     def __init__(self):
         #Window
@@ -36,7 +39,7 @@ class GUI:
         buttonChoose.place(x=60,y=50)
         #ButtonCheck
         buttonCheck=Button(window)
-        buttonCheck.config(text='Sprawdz',font=('Times',16),width=10,bd=1,bg='#cce7fc')
+        buttonCheck.config(text='Sprawdz',font=('Times',16),command=lambda:self.clickCheck(window), width=10,bd=1,bg='#cce7fc')
         buttonCheck.place(x=60,y=100)
         #buttonExample
         buttonExample=Button(window)

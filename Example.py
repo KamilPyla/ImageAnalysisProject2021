@@ -1,5 +1,6 @@
 from tkinter import *
 import Result as res
+from PIL import Image, ImageTk
 
 class Examples:
     def click(self,wnd,path):
@@ -15,10 +16,18 @@ class Examples:
         wnd.config(bg='#48c3dc')
         wnd.resizable(False,False)
         #photos
-        photo1=PhotoImage(file='examples/car1.jpg')
-        photo2=PhotoImage(file='examples/car2.jpg')
-        photo3=PhotoImage(file='examples/car3.jpg')
-        photo4=PhotoImage(file='examples/car4.jpg')
+        image1 = Image.open('examples/car1.jpg')
+        image1 = image1.resize((360, 240), Image.ANTIALIAS)
+        photo1 = ImageTk.PhotoImage(image1)
+        image2 = Image.open('examples/car2.jpg')
+        image2 = image2.resize((360, 240), Image.ANTIALIAS)
+        photo2 = ImageTk.PhotoImage(image2)
+        image3 = Image.open('examples/car3.jpg')
+        image3 = image3.resize((360, 240), Image.ANTIALIAS)
+        photo3 = ImageTk.PhotoImage(image3)
+        image4 = Image.open('examples/car4.jpg')
+        image4 = image4.resize((360, 240), Image.ANTIALIAS)
+        photo4 = ImageTk.PhotoImage(image4)
         #przyciski
         button1=Button(wnd)
         button2=Button(wnd)

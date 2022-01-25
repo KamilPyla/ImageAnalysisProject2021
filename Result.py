@@ -17,6 +17,13 @@ class Result:
         window.destroy()
         #jakas obrobka obrazka bedzie potrzebna
         res=Result(window.filename)
+
+    def clickCheck(self,window):
+        var = StringVar()
+        ResultLabel=Label(window)
+        ResultLabel.place(x=160,y=400)
+        ResultLabel.config(textvariable=var,font=('Times',20),justify='left', anchor=N,pady=20,background="#ab0c0e")
+        var.set("Nie ma czego jeszcze czego sprawdzać")
     
     def __init__(self,path):
         #Window
@@ -31,7 +38,7 @@ class Result:
         buttonChoose.place(x=80,y=50)
         #ButtonCheck
         buttonCheck=Button(window)
-        buttonCheck.config(text='Sprawdz',font=('Times',16),width=10,bd=1,bg='#cce7fc')
+        buttonCheck.config(text='Sprawdz',font=('Times',16),command=lambda:self.clickCheck(window),width=10,bd=1,bg='#cce7fc')
         buttonCheck.place(x=80,y=100)
         #buttonExample
         buttonExample=Button(window)
@@ -44,8 +51,8 @@ class Result:
         bottomLabel.place(x=0,y=380)
         var = StringVar()
         bottomLabel.config(textvariable=var,
-                                  font=('Times',20),justify='left', anchor=N,pady=20)
-        var.set()
+                                  font=('Times',20),justify='center', anchor=N,pady=20)
+        var.set("Cos tam")
 
 
         #mainLabel - Image display
