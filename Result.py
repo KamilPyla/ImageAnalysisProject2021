@@ -33,10 +33,6 @@ class Result:
         buttonCheck=Button(window)
         buttonCheck.config(text='Sprawdz',font=('Times',16),width=10,bd=1,bg='#cce7fc')
         buttonCheck.place(x=80,y=100)
-        #ButtonSave
-        buttonSave=Button(window)
-        buttonSave.config(text='Zapisz',font=('Times',16),width=10,bd=1,bg='#cce7fc')
-        buttonSave.place(x=80,y=150)
         #buttonExample
         buttonExample=Button(window)
         buttonExample.config(text='Przykladowe',font=('Times',16),command=lambda:self.clickExample(window),width=10,bd=1,bg='#cce7fc')
