@@ -46,6 +46,11 @@ class Result:
         bottomLabel=Label(window)
         bottomLabel.config(bg='#ab0c0e',height=120,width=700)
         bottomLabel.place(x=0,y=380)
+        var = StringVar()
+        bottomLabel.config(textvariable=var,
+                                  font=('Times',20),justify='left', anchor=N,pady=20)
+        var.set()
+
 
         #mainLabel - Image display
         mainLabel=Label(window)
