@@ -4,7 +4,6 @@ import imutils
 #import pytesseract
 import easyocr
 
-from ConverterNew import ConverterNew
 
 def imshow(img):
     cv2.imshow("TEST", img)
@@ -17,9 +16,6 @@ imshow(gray)
 bfilter = cv2.bilateralFilter(gray, 11, 17, 17) #Noise reduction
 edged = cv2.Canny(bfilter, 30, 200) #Edge detection
 imshow(edged)
-
-converter = ConverterNew()
-test = converter.convert_photo(img)
 
 keypoints = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 contours = imutils.grab_contours(keypoints)

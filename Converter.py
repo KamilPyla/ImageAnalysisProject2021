@@ -42,8 +42,6 @@ class Converter:
         self.__remove_noise_and_prepare(self.copy_image)
         self.__edge_detection(self.copy_image)
 
-<<<<<<< HEAD
-=======
         return  self.copy_image
 
     def show_original(self):
@@ -54,7 +52,6 @@ class Converter:
         cv2.imshow("Copy Status", self.copy_image)
         cv2.waitKey(0)
 
->>>>>>> dev_rw
     def __convert_to_gray(self, img):
         """
         Parameters
