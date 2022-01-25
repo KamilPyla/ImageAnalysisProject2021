@@ -1,0 +1,9 @@
+pip install opencv-python
+pip install pytesseract
+pip install imutils
+pip install matplotlib
+
+
+https://github.com/opencv/opencv/tree/master/data/haarcascades
+
+pip install opencv-python==4.5.4.60
