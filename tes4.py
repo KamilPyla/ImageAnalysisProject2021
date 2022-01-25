@@ -10,16 +10,16 @@ def imshow(img):
     cv2.imshow("TEST", img)
     cv2.waitKey(0)
 
-img = cv2.imread(r'examples\2.jpg')
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img = cv2.imread('D:\Github\ImageAnalysisProject2021\examples\car.jpg')
+gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 imshow(gray)
 
 bfilter = cv2.bilateralFilter(gray, 11, 17, 17) #Noise reduction
 edged = cv2.Canny(bfilter, 30, 200) #Edge detection
 imshow(edged)
 
-converter = ConverterNew()
-test = converter.convert_photo(img)
+#converter = ConverterNew()
+#test = converter.convert_photo(img)
 
 keypoints = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 contours = imutils.grab_contours(keypoints)
