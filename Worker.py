@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import imutils
-#import pytesseract
+from PIL import Image, ImageTk
 import easyocr
 
 def imshow(img):
@@ -15,7 +15,6 @@ class Worker:
       self.original_image = cv2.imread(img)
     else:
       self.original_image = img
-      print('jeb no i on razu obrazek')
 
   def do_your_work(self):
     gray = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)
@@ -56,7 +55,10 @@ class Worker:
     res = cv2.rectangle(self.original_image, tuple(approx[0][0]), tuple(approx[2][0]), (0,255,0),3)
 
     self.numbers = text
-    self.image_with_frame = res
+    res = cv2.cvtColor(res, cv2.COLOR_BGR2RGB)
+    image = Image.fromarray(res)
+    image = image.resize((360, 240), Image.ANTIALIAS)
+    self.image_with_frame = ImageTk.PhotoImage(image)
 
 
 
