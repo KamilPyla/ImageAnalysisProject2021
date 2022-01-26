@@ -3,13 +3,14 @@ import numpy as np
 import imutils
 #import pytesseract
 import easyocr
+from Worker import Worker
 
 
 def imshow(img):
     cv2.imshow("TEST", img)
     cv2.waitKey(0)
 
-img = cv2.imread(r'examples\2.jpg')
+img = cv2.imread(r'examples\4.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 imshow(gray)
 
@@ -46,13 +47,24 @@ thresh = cv2.threshold(cropped_image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH
 thresh = cv2.GaussianBlur(thresh, (3,3), 0)
 inverse = ~thresh
 imshow(cropped_image)
+imshow(thresh)
+imshow(inverse)
+
 
 #pytesseract.pytesseract.tesseract_cmd = r"D:\Dev Tools\Tesseract-OCR\tesseract.exe"
 #result = pytesseract.image_to_string(cropped_image)
 reader = easyocr.Reader(['en'])
-result = reader.readtext(inverse)
-text = result[0][-2]
+
+try:
+  result = reader.readtext(inverse)
+  text = result[0][-2]
+except:
+  w1 = Worker(cropped_image)
+  w1.do_your_work()
+  print("Error while reding text")
+  text = w1.result
 
 res = cv2.rectangle(img, tuple(approx[0][0]), tuple(approx[2][0]), (0,255,0),3)
 print(text)
 imshow(res)
+
