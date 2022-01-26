@@ -9,15 +9,24 @@ Package manager: anaconda
 
 External libraries:
 ```bash
-opencv-python
 tkinter
 tkinter.ttk
 pip install easyocr
+```
+
+```bash
+pip install easyocr
+```
+
+```bash
 pip install opencv-python
+```
+
+```bash
 pip install imutils
 ```
 
-## How to run proram
+## How to run program
 After install all external libraries run command below
 
 ```bash
