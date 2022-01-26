@@ -11,7 +11,6 @@ External libraries:
 ```bash
 tkinter
 tkinter.ttk
-pip install easyocr
 ```
 
 ```bash
