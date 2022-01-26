@@ -13,7 +13,7 @@ class GUI:
         exmp=ex.Examples()
         
     def clickChoose(self,window):
-        window.filename = filedialog.askopenfilename(initialdir='/',title='Wybierz zdjęcie',filetypes=(("pliki png","*.png"),("pliki jpg","*.jpg")))
+        window.filename = filedialog.askopenfilename(initialdir='/',title='Wybierz zdjęcie',filetypes=(("pliki jpg","*.jpg"),("pliki png","*.png")))
         #jakas obrobka obrazka bedzie potrzebna
         if window.filename!="":
             window.destroy()
